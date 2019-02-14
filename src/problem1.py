@@ -372,12 +372,9 @@ def problem1c(n):
     number = 1
     for k in range(2, n+1):
         if is_prime(k) == True:
-            number = number * is_prime(k)
-    digit_sum = 0
-    if number > 1:
-        digit_sum = digit_sum + (number % 10)
-        number = number // 10
-    return digit_sum
+            number = number * k
+    yeet = sum_of_digits(number)
+    return yeet
 
 
 
