@@ -196,7 +196,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -252,7 +252,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -266,9 +266,10 @@ def problem1b(m, f):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
     count = 0
-    for k in range(m,f*m):
+    for k in range(m,f*m+1):
         if is_prime(k) == True:
             count = count +1
+
     return count
 
 
@@ -368,6 +369,16 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
+    number = 1
+    for k in range(2, n+1):
+        if is_prime(k) == True:
+            number = number * is_prime(k)
+    digit_sum = 0
+    if number > 1:
+        digit_sum = digit_sum + (number % 10)
+        number = number // 10
+    return digit_sum
+
 
 
 ###############################################################################
